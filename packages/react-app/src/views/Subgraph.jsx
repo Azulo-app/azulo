@@ -5,8 +5,8 @@ import "antd/dist/antd.css";
 import { Button, Typography, Table, Input } from "antd";
 import { useQuery, gql } from '@apollo/client';
 import { Address } from "../components";
-import GraphiQL from 'graphiql';
-import 'graphiql/graphiql.min.css';
+// import GraphiQL from 'graphiql';
+// import 'graphiql/graphiql.min.css';
 import fetch from 'isomorphic-fetch';
 
   const highlight = { marginLeft: 4, marginRight: 8, /*backgroundColor: "#f9f9f9",*/ padding: 4, borderRadius: 4, fontWeight: "bolder" }
@@ -77,7 +77,7 @@ function Subgraph(props) {
             You will find that parsing/tracking events with the <span class="highlight" style={highlight}>useEventListener</span> hook becomes a chore for every new project.
           </div>
           <div style={{ margin: "auto", marginTop: 32 }}>
-            Instead, you can use <a href="https://thegraph.com/docs/introduction" target="_blank" rel="noopener noreferrer">The Graph</a> with 🏗 scaffold-eth (<a href="https://youtu.be/T5ylzOTkn-Q" target="_blank">learn more</a>):
+            Instead, you can use <a href="https://thegraph.com/docs/introduction" target="_blank" rel="noopener noreferrer">The Graph</a> with 🏗 azulo (<a href="https://youtu.be/T5ylzOTkn-Q" target="_blank">learn more</a>):
           </div>
 
           <div style={{ margin: 32 }}>
@@ -145,7 +145,7 @@ function Subgraph(props) {
             {data?<Table dataSource={data.purposes} columns={purposeColumns} rowKey={"id"} />:<Typography>{(loading?"Loading...":deployWarning)}</Typography>}
 
             <div style={{margin:32, height:400, border:"1px solid #888888", textAlign:'left'}}>
-              <GraphiQL fetcher={graphQLFetcher} docExplorerOpen={true} query={EXAMPLE_GRAPHQL}/>
+              {/* <GraphiQL fetcher={graphQLFetcher} docExplorerOpen={true} query={EXAMPLE_GRAPHQL}/> */}
             </div>
 
           </div>

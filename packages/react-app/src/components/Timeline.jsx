@@ -5,7 +5,7 @@ import { SendOutlined, DownloadOutlined, EditOutlined } from "@ant-design/icons"
 
 const { Text } = Typography;
 
-// displays a timeline for scaffold-eth usage
+// displays a timeline for azulo usage
 
 export default function TimelineDisplay(props) {
   return (
@@ -13,7 +13,7 @@ export default function TimelineDisplay(props) {
       <Timeline.Item dot="💾">
         <Text delete>
           Clone and Install from the{" "}
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/austintgriffith/scaffold-eth">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/austintgriffith/azulo">
             github repo
           </a>
         </Text>
@@ -89,7 +89,7 @@ export default function TimelineDisplay(props) {
 
       <Timeline.Item dot="🚀">
         <Text>
-          Build something awesome with 🏗 <a href="https://github.com/austintgriffith/scaffold-eth">scaffold-eth</a> and{" "}
+          Build something awesome with 🏗 <a href="https://github.com/austintgriffith/azulo">azulo</a> and{" "}
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/austingriffith">
             @ me
           </a>

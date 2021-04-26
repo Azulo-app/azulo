@@ -1,3 +1,94 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Libre Franklin';
+  src:url('fonts/LibreFranklin-Regular.ttf') format('ttf'),
+      url('fonts/LibreFranklin-Regular.woff2') format('woff2'),
+      url('fonts/LibreFranklin-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Libre Franklin';
+  src:url('fonts/LibreFranklin-SemiBold.ttf') format('ttf'),
+      url('fonts/LibreFranklin-SemiBold.woff2') format('woff2'),
+      url('fonts/LibreFranklin-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Franklin';
+  src:url('fonts/LibreFranklin-Bold.ttf') format('ttf'), 
+      url('fonts/LibreFranklin-Bold.woff2') format('woff2'),
+      url('fonts/LibreFranklin-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.section {
+  text-align: left;
+  max-width: 720px;
+  margin: 4rem auto auto;
+}
+
+*, a {
+  font-family: "Libre Franklin", arial, sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1;
+}
+
+a {
+  color: #7131ff
+}
+
+#WEB3_CONNECT_MODAL_ID {
+  z-index: 9999;
+}
+#WEB3_CONNECT_MODAL_ID > div {
+  z-index: 9999;
+}
+
+#family_trust_svg #Group_11932 {
+  animation: floating 7s ease-in-out infinite;
+}
+#family_trust_svg #Group_11924 {
+  animation: floating2 8s ease-in-out infinite;
+}
+#family_trust_svg #Group_11927 {
+  animation: floating3 10s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(0, -2%); }
+  66% { transform: translate(0, 2%); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes floating2 {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(0, -1%); }
+  66% { transform: translate(0, 1%); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes floating3 {
+  0% { transform: translate(0, 1%); }
+  33% { transform: translate(0, 0%); }
+  66% { transform: translate(0, 2%); }
+  100% { transform: translate(0, 1%); }
+} 
