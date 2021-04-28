@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
 import { mainStyles } from '../layout/PageStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { ReactSVG } from 'react-svg';
-import BGCurve from '../assets/bg_curve_2.svg';
-import FamilyTrustImg from '../assets/family_trust.svg';
-import ICBooks from '../assets/ic_books.svg';
 
 const useStyles = makeStyles((theme) => ({
   pageDesc: {

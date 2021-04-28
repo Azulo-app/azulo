@@ -28,7 +28,6 @@ import Container from '@material-ui/core/Container';
 import { ReactSVG } from 'react-svg'
 import AzuloLogo from './assets/azulo_logo.svg';
 
-
 /*
     Welcome to 🏗 azulo !
 
@@ -50,7 +49,7 @@ import AzuloLogo from './assets/azulo_logo.svg';
 
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS['localhost']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS['rinkeby']; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true
@@ -201,16 +200,16 @@ function App(props) {
   //
   useEffect(()=>{
     if(DEBUG && mainnetProvider && address && selectedChainId && yourLocalBalance && yourMainnetBalance && readContracts && writeContracts && mainnetDAIContract){
-      console.log("_____________________________________ 🏗 azulo _____________________________________")
-      console.log("🌎 mainnetProvider",mainnetProvider)
-      console.log("🏠 localChainId",localChainId)
-      console.log("👩‍💼 selected address:",address)
-      console.log("🕵🏻‍♂️ selectedChainId:",selectedChainId)
-      console.log("💵 yourLocalBalance",yourLocalBalance?formatEther(yourLocalBalance):"...")
-      console.log("💵 yourMainnetBalance",yourMainnetBalance?formatEther(yourMainnetBalance):"...")
-      console.log("📝 readContracts",readContracts)
-      console.log("🌍 DAI contract on mainnet:",mainnetDAIContract)
-      console.log("🔐 writeContracts",writeContracts)
+      // console.log("_____________________________________ 🏗 azulo _____________________________________")
+      // console.log("🌎 mainnetProvider",mainnetProvider)
+      // console.log("🏠 localChainId",localChainId)
+      // console.log("👩‍💼 selected address:",address)
+      // console.log("🕵🏻‍♂️ selectedChainId:",selectedChainId)
+      // console.log("💵 yourLocalBalance",yourLocalBalance?formatEther(yourLocalBalance):"...")
+      // console.log("💵 yourMainnetBalance",yourMainnetBalance?formatEther(yourMainnetBalance):"...")
+      // console.log("📝 readContracts",readContracts)
+      // console.log("🌍 DAI contract on mainnet:",mainnetDAIContract)
+      // console.log("🔐 writeContracts",writeContracts)
     }
   }, [mainnetProvider, address, selectedChainId, yourLocalBalance, yourMainnetBalance, readContracts, writeContracts, mainnetDAIContract])
 
@@ -346,7 +345,7 @@ function App(props) {
         <Link
           key="getstarted"
           className={classes.mainButton}
-          onClick={()=>{setRoute("/create")}} to="/create"
+          to="/create"
         >
           Get started
         </Link>
@@ -396,13 +395,24 @@ function App(props) {
             )}
           </Route>
           <Route path="/create">
-            {isAuthenticated ? (
-              <Create />
-            ) : (
-              <Redirect to={
-                `/`
-              } />
-            )}
+            {/* <ExampleUI
+              address={address}
+              userProvider={userProvider}
+              mainnetProvider={mainnetProvider}
+              localProvider={localProvider}
+              yourLocalBalance={yourLocalBalance}
+              price={price}
+              tx={tx}
+              writeContracts={writeContracts}
+              readContracts={readContracts}
+              purpose={purpose}
+              setPurposeEvents={setPurposeEvents}
+            /> */}
+            <Create
+              address={address}
+              tx={tx}
+              writeContracts={writeContracts}
+            />
           </Route>
           <Route path="/trusts">
             {isAuthenticated ? (

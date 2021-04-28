@@ -11,18 +11,26 @@ import { ThemeSwitch } from "../components";
 const useStyles = makeStyles((theme) => ({
   footer: {
     marginTop: 'auto',
-    borderTop: '1px solid #EEEEEE',
-    paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
+      paddingBottom: theme.spacing(3),
     },
   },
   holder: {
     display: 'flex',
     flexWrap: 'wrap',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: theme.spacing(3),
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '1px',
+      background: '#eeeeee'
+    }
   },
   links: {
     flexGrow: 1,
@@ -70,10 +78,10 @@ export default function Footer() {
               </Grid>
               <Grid item className={classes.links}>
                 <nav>
-                  <Link variant="button" color="textPrimary" to="/terms" className={classes.link}>
+                  <Link variant="button" color="textPrimary" to="/terms" className={classes.link} rel="noopener noreferrer" target="_blank">
                       Terms
                   </Link>
-                  <Link variant="button" color="textPrimary" to="/privacy" className={classes.link}>
+                  <Link variant="button" color="textPrimary" to="/privacy" className={classes.link} rel="noopener noreferrer" target="_blank">
                       Privacy
                   </Link>
                 </nav>

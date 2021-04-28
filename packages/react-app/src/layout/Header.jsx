@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
@@ -59,17 +59,12 @@ export default function Header({
 }) {
   const classes = useStyles();
 
-  const [route, setRoute] = useState();
-  useEffect(() => {
-    setRoute(window.location.pathname)
-  }, [setRoute]);
-
   return (
     <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Container maxWidth="lg">
             <div className={classes.toolbar}>
                 <div className={classes.logo}>
-                    <Link onClick={()=>{setRoute("/")}} to="/">
+                    <Link to="/">
                         <ReactSVG src={AzuloLogo} />
                     </Link>
                 </div>
@@ -97,7 +92,7 @@ export default function Header({
                     <Link variant="button" color="textPrimary" href="#" className={classes.link}>
                         Access trust
                     </Link>
-                    <Link variant="button" color="textPrimary" onClick={()=>{setRoute("/assets")}} to="/assets" className={classes.link}>
+                    <Link variant="button" color="textPrimary" to="/assets" className={classes.link}>
                         Assets
                     </Link>
                 </nav>

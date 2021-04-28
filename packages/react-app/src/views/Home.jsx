@@ -149,7 +149,7 @@ export default function Home({loadWeb3Modal}) {
                   <Grid container spacing={1}>
                     <Grid item xs={2} className={classes.featIcon}><ReactSVG src={ICBooks} /></Grid>
                     <Grid item sm={10}>
-                      <div className={classes.featTitle}>Manage your trusts</div>
+                      <div className={classes.featTitle}>Create a trusts</div>
                       <div className={classes.featDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </Grid>
                   </Grid>

@@ -1,21 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { mainStyles } from '../layout/PageStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { ReactSVG } from 'react-svg';
-import BGCurve from '../assets/bg_curve_2.svg';
-import FamilyTrustImg from '../assets/family_trust.svg';
-import ICBooks from '../assets/ic_books.svg';
+import CustomIcons from '../assets/icons';
 
 const useStyles = makeStyles((theme) => ({
   pageDesc: {
     fontSize: '1em',
     lineHeight: '1.6'
   },
+  trustsHold: {
+    marginTop: '20px'
+  },
+  trustItem: {
+    background: 'transparent',
+    border: '1px solid #7131FF',
+    borderRadius: '8px',
+    padding: '30px 40px',
+    boxSizing: 'border-box',
+    width: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden',
+    transition: 'all 0.3s ease-in-out',
+    '&:hover': {
+      background: '#f5f2fb',
+      border: '1px solid #7131FF',
+      '& $trustItemTitle': {
+        color: '#7131FF'
+      }
+    }
+  },
+  trustItemTitle: {
+    fontSize: '1.2em',
+    color: '#7131FF',
+    transition: 'all 0.3s ease-in-out',
+    fontWeight: 600
+  },
+  trustItemAdd: {
+    border: '1px solid #dedede',
+    '& $trustItemTitle': {
+      color: '#adabab'
+    }
+  }
 }));
 
 export default function Trusts({address}) {
@@ -46,16 +75,24 @@ export default function Trusts({address}) {
               <Grid item md={12}>
                 <Grid container alignItems="center">
                   <Grid item className={mainClasses.pageTitleHold}><div className={mainClasses.pageTitle}>Trusts</div></Grid>
-                  <Grid item><div className={mainClasses.pageDesc}>Your Trusts</div></Grid>
+                  <Grid item><div className={mainClasses.pageDesc}>View, manage and create Trusts</div></Grid>
                 </Grid>
-                <div>
-                  <ul>
-                    {/* {zapperBalances.length > 0 &&
-                      zapperBalances.map(balances => (
-                      <li>{balances.meta}</li>
-                    ))} */}
-                  </ul>
-                </div>
+                <Grid spacing={3} container alignItems="flex-start" className={classes.trustsHold}>
+                  <Grid xs={12} sm={6} md={4} item>
+                    <Grid container alignItems="flex-start">
+                      <Link to="/create" className={`${classes.trustItem} ${classes.trustItemAdd}`}>
+                        <Grid container justify="space-between" alignItems="stretch">
+                          <Grid item className={classes.trustItemTitle}>
+                            Create new trust
+                          </Grid>
+                          <Grid item className={classes.trustItemIcon}>
+                            <CustomIcons.AddIcon style={{ color: "#7131ff", width: '14px', height: '14px' }} />
+                          </Grid>
+                        </Grid>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Container>
