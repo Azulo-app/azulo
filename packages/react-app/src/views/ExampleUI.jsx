@@ -154,7 +154,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
                     address={item[0]}
                     ensProvider={mainnetProvider}
                     fontSize={16}
-                  /> =>
+                  /> =&gt;
                 {item[1]}
               </List.Item>
             )
@@ -167,7 +167,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
 
         <Card>
 
-          Check out all the <a href="https://github.com/austintgriffith/scaffold-eth/tree/master/packages/react-app/src/components" target="_blank" rel="noopener noreferrer">📦  components</a>
+          Check out all the <a href="https://github.com/austintgriffith/azulo/tree/master/packages/react-app/src/components" target="_blank" rel="noopener noreferrer">📦  components</a>
 
         </Card>
 

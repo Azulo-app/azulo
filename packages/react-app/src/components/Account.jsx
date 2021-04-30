@@ -4,6 +4,30 @@ import Address from "./Address";
 import Balance from "./Balance";
 import Wallet from "./Wallet";
 import { useThemeSwitcher } from "react-css-theme-switcher";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  accountBtn: {
+    fontSize: '1em !important',
+    color: '#000!important',
+    fontWeight: '600 !important',
+    background: 'none!important',
+    lineHeight: '1 !important',
+    border: '0 !important',
+    height: '0 !important',
+    padding: '0 !important',
+    borderRadius: '0 !important',
+    boxShadow: 'none !important',
+    '& span': {
+      fontSize: '1em !important',
+      color: '#000!important',
+      fontWeight: '600 !important',
+    },
+    '&:hover': {
+      color: '#7131ff',
+    },
+  },
+}));
 
 /*
   ~ What it does? ~
@@ -51,31 +75,32 @@ export default function Account({
   logoutOfWeb3Modal,
   blockExplorer,
 }) {
+  const classes = useStyles();
   const modalButtons = [];
   if (web3Modal) {
     if (web3Modal.cachedProvider) {
       modalButtons.push(
         <Button
           key="logoutbutton"
-          style={{ verticalAlign: "top", marginLeft: 8, marginTop: 4 }}
+          className={classes.accountBtn}
           shape="round"
           size="large"
           onClick={logoutOfWeb3Modal}
         >
-          logout
+          Logout
         </Button>,
       );
     } else {
       modalButtons.push(
         <Button
           key="loginbutton"
-          style={{ verticalAlign: "top", marginLeft: 8, marginTop: 4 }}
+          className={classes.accountBtn}
           shape="round"
           size="large"
           /*type={minimized ? "default" : "primary"}     too many people just defaulting to MM and having a bad time*/
           onClick={loadWeb3Modal}
         >
-          connect
+          Access trust
         </Button>,
       );
     }
@@ -89,7 +114,7 @@ export default function Account({
     <span>
       {address ? <Address address={address} ensProvider={mainnetProvider} blockExplorer={blockExplorer} /> : "Connecting..."}
       <Balance address={address} provider={localProvider} price={price} />
-      <Wallet address={address} provider={userProvider} ensProvider={mainnetProvider} price={price} color={currentTheme == "light" ? "#1890ff" : "#2caad9"} />
+      <Wallet address={address} provider={userProvider} ensProvider={mainnetProvider} price={price} color={currentTheme === "light" ? "#1890ff" : "#2caad9"} />
     </span>
   );
 

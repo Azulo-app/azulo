@@ -1,3 +1,9 @@
+export { default as Home } from "./Home";
+export { default as Create } from "./Create";
+export { default as Trusts } from "./Trusts";
+export { default as Assets } from "./Assets";
+export { default as Terms } from "./Terms";
+export { default as Privacy } from "./Privacy";
 export { default as Hints } from "./Hints";
 export { default as ExampleUI } from "./ExampleUI";
 export { default as Subgraph } from "./Subgraph";
